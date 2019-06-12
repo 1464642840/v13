@@ -11,6 +11,13 @@
   <sql id="Base_Column_List">
     id, pid, name, flag, create_time
   </sql>
+
+  <select id="selectList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from t_product_type
+    where flag=1
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

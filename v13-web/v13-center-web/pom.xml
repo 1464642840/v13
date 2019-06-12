@@ -54,6 +54,7 @@
             <artifactId>v13-product-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
     </dependencies>
 
     <build>

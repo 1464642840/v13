@@ -1,5 +1,6 @@
 package com.qf.v13productservice;
 
+import com.github.pagehelper.PageInfo;
 import com.qf.v13.api.IProductService;
 import com.qf.v13.entity.TProduct;
 import org.junit.Assert;
@@ -19,7 +20,8 @@ public class V13ProductServiceApplicationTests {
     private IProductService service;
     @Test
     public void contextLoads() {
-        List<TProduct> tProducts = service.selectList();
+        PageInfo<TProduct> page = service.page(1, 10);
+        System.out.println(page.getList().size());
 
     }
 
