@@ -16,6 +16,14 @@
     <sql id="Base_Column_List">
     id, name, price, sale_price, image, sale_point, type_id, type_name, flag, create_time
   </sql>
+    <update id="batchUpdateFlag" parameterType="java.util.List">
+        update t_product
+        set flag = 0
+        where id in 
+        <foreach collection="list" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </update>
     <select id="selectList" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
@@ -42,7 +50,7 @@
       #{typeId,jdbcType=BIGINT}, #{typeName,jdbcType=VARCHAR}, #{flag,jdbcType=BIT}, 
       #{createTime,jdbcType=TIMESTAMP})
   </insert>
-    <insert id="insertSelective" parameterType="com.qf.v13.entity.TProduct">
+    <insert id="insertSelective" parameterType="com.qf.v13.entity.TProduct" keyProperty="id" useGeneratedKeys="true">
         insert into t_product
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">

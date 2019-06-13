@@ -106,4 +106,20 @@ public class TProduct implements Serializable {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
+
+    @Override
+    public String toString() {
+        return "TProduct{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", salePrice=" + salePrice +
+                ", image='" + image + '\'' +
+                ", salePoint='" + salePoint + '\'' +
+                ", typeId=" + typeId +
+                ", typeName='" + typeName + '\'' +
+                ", flag=" + flag +
+                ", createTime=" + createTime +
+                '}';
+    }
 }
