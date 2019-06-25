@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>v13-product-api</module>
+        <module>v13-search-api</module>
     </modules>
 
     <dependencies>
@@ -32,11 +33,9 @@
             <version>3.4.2</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.ibatis</groupId>
-            <artifactId>ibatis-core</artifactId>
-            <version>3.0</version>
-        </dependency>
+
+
+
 
     </dependencies>
 

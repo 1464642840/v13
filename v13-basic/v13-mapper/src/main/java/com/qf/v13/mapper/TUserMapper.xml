@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.v13.mapper.TUserMapper">
+    <resultMap id="BaseResultMap" type="com.qf.v13.entity.TUser">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="phone" jdbcType="BIGINT" property="phone"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="active_code" jdbcType="VARCHAR" property="activeCode"/>
+        <result column="is_active" jdbcType="BIT" property="isActive"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, user_name, password, phone, email, active_code, is_active
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_user
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_user
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+    <insert id="insert" parameterType="com.qf.v13.entity.TUser">
+    insert into t_user (id, user_name, password, 
+      phone, email, active_code, 
+      is_active)
+    values (#{id,jdbcType=BIGINT}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=BIGINT}, #{email,jdbcType=VARCHAR}, #{activeCode,jdbcType=VARCHAR}, 
+      #{isActive,jdbcType=BIT})
+  </insert>
+    <insert id="insertSelective" parameterType="com.qf.v13.entity.TUser" keyProperty="id" useGeneratedKeys="true">
+        insert into t_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="userName != null">
+                user_name,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="phone != null">
+                phone,
+            </if>
+            <if test="email != null">
+                email,
+            </if>
+            <if test="activeCode != null">
+                active_code,
+            </if>
+            <if test="isActive != null">
+                is_active,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="userName != null">
+                #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                #{phone,jdbcType=BIGINT},
+            </if>
+            <if test="email != null">
+                #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="activeCode != null">
+                #{activeCode,jdbcType=VARCHAR},
+            </if>
+            <if test="isActive != null">
+                #{isActive,jdbcType=BIT},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.qf.v13.entity.TUser">
+        update t_user
+        <set>
+            <if test="userName != null">
+                user_name = #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                password = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                phone = #{phone,jdbcType=BIGINT},
+            </if>
+            <if test="email != null">
+                email = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="activeCode != null">
+                active_code = #{activeCode,jdbcType=VARCHAR},
+            </if>
+            <if test="isActive != null">
+                is_active = #{isActive,jdbcType=BIT},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.qf.v13.entity.TUser">
+    update t_user
+    set user_name = #{userName,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=BIGINT},
+      email = #{email,jdbcType=VARCHAR},
+      active_code = #{activeCode,jdbcType=VARCHAR},
+      is_active = #{isActive,jdbcType=BIT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+    <update id="checkActive">
+    update t_user
+    set is_active=1
+    where id=#{id} and active_code=#{v_key}
+  </update>
+
+    
+    <select id="checkUserEsxist" resultType="int" parameterType="string">
+  select count(id)
+  from t_user
+  where user_name = #{userName}
+  </select>
+</mapper>

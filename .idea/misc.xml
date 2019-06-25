@@ -6,8 +6,20 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/v13-service/v13-product-service/pom.xml" />
-        <option value="$PROJECT_DIR$/demo/pom.xml" />
         <option value="$PROJECT_DIR$/v13-web/v13-center-web/pom.xml" />
+        <option value="$PROJECT_DIR$/v13-service/v13-search-service/pom.xml" />
+        <option value="$PROJECT_DIR$/v13-web/v13-search-web/pom.xml" />
+        <option value="$PROJECT_DIR$/v13-web/index-web/pom.xml" />
+        <option value="$PROJECT_DIR$/v13-web/v13-detail-web/pom.xml" />
+        <option value="$PROJECT_DIR$/demo/demo-grab/pom.xml" />
+        <option value="$PROJECT_DIR$/v13-web/v13-user-web/pom.xml" />
+        <option value="$PROJECT_DIR$/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/v13-api/v13-user-api/pom.xml" />
+        <option value="$PROJECT_DIR$/v13-service/v13-user-service/pom.xml" />
+        <option value="$PROJECT_DIR$/v13-api/v13-email-api/pom.xml" />
+        <option value="$PROJECT_DIR$/v13-service/pom.xml" />
+        <option value="$PROJECT_DIR$/v13-service/v13-email-service/pom.xml" />
+        <option value="$PROJECT_DIR$/v13-web/v13-email-web/pom.xml" />
       </list>
     </option>
   </component>

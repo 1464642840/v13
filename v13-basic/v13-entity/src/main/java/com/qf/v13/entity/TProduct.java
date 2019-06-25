@@ -1,6 +1,7 @@
 package com.qf.v13.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -11,9 +12,9 @@ public class TProduct implements Serializable {
 
     private String name;
 
-    private Long price;
+    private BigDecimal price;
 
-    private Long salePrice;
+    private BigDecimal salePrice;
 
     private String image;
 
@@ -26,6 +27,22 @@ public class TProduct implements Serializable {
     private Boolean flag;
 
     private Date createTime;
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public BigDecimal getSalePrice() {
+        return salePrice;
+    }
+
+    public void setSalePrice(BigDecimal salePrice) {
+        this.salePrice = salePrice;
+    }
 
     public Long getId() {
         return id;
@@ -43,21 +60,6 @@ public class TProduct implements Serializable {
         this.name = name == null ? null : name.trim();
     }
 
-    public Long getPrice() {
-        return price;
-    }
-
-    public void setPrice(Long price) {
-        this.price = price;
-    }
-
-    public Long getSalePrice() {
-        return salePrice;
-    }
-
-    public void setSalePrice(Long salePrice) {
-        this.salePrice = salePrice;
-    }
 
     public String getImage() {
         return image;

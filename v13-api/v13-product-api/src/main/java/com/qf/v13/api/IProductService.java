@@ -13,10 +13,10 @@ import java.util.List;
  * @Date ${Date}
  */
 public interface IProductService extends IBaseService<TProduct> {
-    public PageInfo<TProduct> page(Integer pageIndex, Integer pageSize);
+    PageInfo<TProduct> page(Integer pageIndex, Integer pageSize);
 
-    public Long sava(TProductVo vo);
+    Long sava(TProductVo vo);
 
-    public  Long batchDelete(List<Long> ids);
+    Long batchDelete(List<Long> ids);
 }
 
