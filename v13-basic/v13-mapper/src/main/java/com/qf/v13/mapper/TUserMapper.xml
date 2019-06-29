@@ -121,10 +121,19 @@
     where id=#{id} and active_code=#{v_key}
   </update>
 
-    
+
     <select id="checkUserEsxist" resultType="int" parameterType="string">
   select count(id)
   from t_user
   where user_name = #{userName}
   </select>
+
+    <select id="doLogin" parameterType="string" resultMap="BaseResultMap">
+        select
+       id,user_name,password
+        from t_user
+        where
+        is_active=1
+        and (user_name=#{userName} or phone=#{userName} or email=#{userName})
+    </select>
 </mapper>

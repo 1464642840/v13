@@ -1,6 +1,8 @@
 package com.qf.v13.entity;
 
 import java.io.Serializable;
+import java.util.Collection;
+import java.util.Map;
 
 public class TProductDesc implements Serializable {
     private Long id;

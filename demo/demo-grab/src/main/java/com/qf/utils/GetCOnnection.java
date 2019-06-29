@@ -26,6 +26,7 @@ public class GetCOnnection {
 
     public static void save(Connection connection, TProduct tProduct) throws SQLException {
         String sql = "insert into t_product(id,name,price,sale_price,image,sale_point,type_id,type_name,flag,create_time) values (?,?,?,?,?,?,?,?,?,?)";
+        System.out.println("开启存储");
 
         PreparedStatement pstm = connection.prepareStatement(sql);
         pstm.setLong(1, tProduct.getId());
@@ -39,6 +40,8 @@ public class GetCOnnection {
         pstm.setBoolean(9, true);
         pstm.setDate(10, new java.sql.Date(System.currentTimeMillis()));
         System.out.println(pstm.executeUpdate());
+        pstm.close();
+        connection.close();
 
     }
 
@@ -54,6 +57,8 @@ public class GetCOnnection {
         pstm.setBoolean(4, true);
         pstm.setDate(5, new java.sql.Date(System.currentTimeMillis()));
         System.out.println(pstm.executeUpdate());
+        pstm.close();
+        connection.close();
 
     }
 }

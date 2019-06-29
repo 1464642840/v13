@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.v13.mapper.TShopcartMapper">
+    <resultMap id="BaseResultMap" type="com.qf.v13.entity.TShopcart">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="user_id" jdbcType="BIGINT" property="userId"/>
+        <result column="product_id" jdbcType="BIGINT" property="productId"/>
+        <result column="counts" jdbcType="INTEGER" property="count"/>
+        <result column="price" jdbcType="DECIMAL" property="price"/>
+        <result column="product_name" jdbcType="VARCHAR" property="productName"/>
+        <result column="product_image" jdbcType="VARCHAR" property="productImage"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="flag" jdbcType="BIT" property="flag"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, user_id, product_id, counts, price, product_name, product_image, create_time,
+    update_time, flag
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_shopcart
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_shopcart
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+    <insert id="insert" parameterType="com.qf.v13.entity.TShopcart">
+    insert into t_shopcart (id, user_id, product_id, 
+      counts, price, product_name,
+      product_image, create_time, update_time, 
+      flag)
+    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{productId,jdbcType=BIGINT}, 
+      #{count,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, #{productName,jdbcType=VARCHAR}, 
+      #{productImage,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{flag,jdbcType=BIT})
+  </insert>
+    <insert id="insertSelective" parameterType="com.qf.v13.entity.TShopcart">
+        insert into t_shopcart
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="productId != null">
+                product_id,
+            </if>
+            <if test="count != null">
+                counts,
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+            <if test="productName != null">
+                product_name,
+            </if>
+            <if test="productImage != null">
+                product_image,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="flag != null">
+                flag,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="productId != null">
+                #{productId,jdbcType=BIGINT},
+            </if>
+            <if test="count != null">
+                #{count,jdbcType=INTEGER},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=DECIMAL},
+            </if>
+            <if test="productName != null">
+                #{productName,jdbcType=VARCHAR},
+            </if>
+            <if test="productImage != null">
+                #{productImage,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="flag != null">
+                #{flag,jdbcType=BIT},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.qf.v13.entity.TShopcart">
+        update t_shopcart
+        <set>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="productId != null">
+                product_id = #{productId,jdbcType=BIGINT},
+            </if>
+            <if test="count != null">
+                counts = #{count,jdbcType=INTEGER},
+            </if>
+            <if test="price != null">
+                price = #{price,jdbcType=DECIMAL},
+            </if>
+            <if test="productName != null">
+                product_name = #{productName,jdbcType=VARCHAR},
+            </if>
+            <if test="productImage != null">
+                product_image = #{productImage,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="flag != null">
+                flag = #{flag,jdbcType=BIT},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.qf.v13.entity.TShopcart">
+    update t_shopcart
+    set user_id = #{userId,jdbcType=BIGINT},
+      product_id = #{productId,jdbcType=BIGINT},
+      counts = #{count,jdbcType=INTEGER},
+      price = #{price,jdbcType=DECIMAL},
+      product_name = #{productName,jdbcType=VARCHAR},
+      product_image = #{productImage,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      flag = #{flag,jdbcType=BIT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+    <select id="queryShopCatByUserId" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from t_shopcart
+        where user_id = #{id,jdbcType=BIGINT} and flag=1
+    </select>
+
+    <insert id="addList" parameterType="java.util.List">
+        insert into t_shopcart
+        (
+        user_id,
+        product_id,
+        counts,
+        price,
+        product_name,
+        product_image,
+        create_time,
+        update_time
+        )
+        values
+        <foreach collection="list" item="item" separator=",">
+            (
+            #{id},
+            #{item.productId},
+            #{item.count},
+            #{item.price},
+            #{item.productName},
+            #{item.productImage},
+            #{item.createTime},
+            #{item.updateTime}
+            )
+        </foreach>
+    </insert>
+</mapper>

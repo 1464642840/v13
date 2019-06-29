@@ -26,4 +26,6 @@ public interface TUserMapper extends IBaseDao<TUser> {
     int checkActive(@Param("id") Long id, @Param("v_key") String v_key);
 
     int checkUserEsxist(@Param("userName") String userName);
+
+    TUser doLogin(@Param("userName") String userName, @Param("password") String password);
 }

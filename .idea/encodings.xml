@@ -8,12 +8,15 @@
     <file url="file://$PROJECT_DIR$/v13-service/v13-email-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/v13-service/v13-product-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/v13-service/v13-search-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v13-service/v13-shopcart-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/v13-service/v13-user-service" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/v13-web/index-web" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/v13-web/v13-center-web" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/v13-web/v13-detail-web" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/v13-web/v13-email-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v13-web/v13-index-web" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/v13-web/v13-search-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v13-web/v13-shopcar-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v13-web/v13-sso-web" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/v13-web/v13-user-web" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>

@@ -10,7 +10,6 @@
         <module name="demo-grab" />
         <module name="demo-redis" />
         <module name="demo1" />
-        <module name="index-web" />
         <module name="v13-center-web" />
         <module name="v13-common" />
         <module name="v13-detail-web" />
@@ -18,12 +17,17 @@
         <module name="v13-email-service" />
         <module name="v13-email-web" />
         <module name="v13-entity" />
+        <module name="v13-index-web" />
         <module name="v13-mapper" />
         <module name="v13-product-api" />
         <module name="v13-product-service" />
         <module name="v13-search-api" />
         <module name="v13-search-service" />
         <module name="v13-search-web" />
+        <module name="v13-shopcar-web" />
+        <module name="v13-shopcart-api" />
+        <module name="v13-shopcart-service" />
+        <module name="v13-sso-web" />
         <module name="v13-user-api" />
         <module name="v13-user-service" />
         <module name="v13-user-web" />
@@ -34,6 +38,10 @@
       <module name="demo-rabbitmq" target="1.8" />
       <module name="demo1" target="1.8" />
       <module name="demograb" target="1.8" />
+      <module name="index-web" target="1.8" />
+      <module name="v13-sso-api" target="1.8" />
+      <module name="v13-sso-service" target="1.8" />
+      <module name="v13-user-web (1)" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

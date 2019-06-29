@@ -8,15 +8,15 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>v13-web</artifactId>
-    <dependencies>
-        <dependency>
-            <groupId>com.qf</groupId>
-            <artifactId>v13-product-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-    </dependencies>
+    <modules>
+        <module>v13-center-web</module>
+        <module>v13-detail-web</module>
+        <module>v13-sso-web</module>
+        <module>v13-user-web</module>
+        <module>v13-search-web</module>
+        <module>v13-index-web</module>
+        <module>v13-email-web</module>
+    </modules>
 
 </project>

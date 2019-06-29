@@ -68,7 +68,7 @@ public class JDPC {
 
     private static void page() throws Exception {
         for (int i = 1; i <= 100; i++) {
-            String url = "https://search.jd.com/Search?keyword=%E9%A3%9F%E5%93%81&enc=utf-8&qrst=1&rt=1&stop=1&vt=1&stock=1&page="+i+"&s=53&click=0";
+            String url = "https://search.jd.com/Search?keyword=手机&enc=utf-8&page=" + (2 * i - 1);
             String html = HttpClientUtils.doGet(url, "utf-8");
             parseIndex(html);
         }
@@ -89,7 +89,7 @@ public class JDPC {
         Document document = Jsoup.parse(html);
         TProduct product = new TProduct();
         product.setId(Long.parseLong(pid));
-        Elements titleEl = document.select("[class=sku-name]");
+        Elements titleEl = document.select("div[class=p-name]");
         product.setName(titleEl.text());
         Elements brandEl = document.select("#parameter-brand>li");
         product.setSalePoint(brandEl.attr("title"));
@@ -123,9 +123,15 @@ public class JDPC {
         String bigTypename = document.select("div[class=crumb fl clearfix]>div[class=item first]>a").text();
         String smallTypename = document.select("a[clstag*='mbNav-2']").text();
         String href = document.select("a[clstag*='mbNav-2']").attr("href");
-        Long smallNum = Long.parseLong(href.substring(href.lastIndexOf(',') + 1));
-        Long bigNum = Long.parseLong(href.substring(href.lastIndexOf('=') + 1, href.lastIndexOf(',')));
-
+        Long smallNum;
+        Long bigNum;
+        if (href.equals("//shouji.jd.com")) {
+            smallNum = 9988L;
+            bigNum = 9987L;
+        } else {
+            smallNum = Long.parseLong(href.substring(href.lastIndexOf(',') + 1));
+            bigNum = Long.parseLong(href.substring(href.lastIndexOf('=') + 1, href.lastIndexOf(',')));
+        }
         if (typeId.add(bigNum)) {
             TProductType tProductType = new TProductType();
             tProductType.setId(bigNum);

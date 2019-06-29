@@ -10,4 +10,5 @@ public interface RabbitMQConstant {
     public static final String PRODUCT_SEARCH_QUEUE_ADDORUPDATE = "product-search-queue-addorupdate";
     public static final String PRODUCT_SEARCH_QUEUE_DELETE = "product-search-queue-delete";
     public static final String USER_EMAIL_QUEUE = "user-email-queue";
+    public static final String USER_MSG_QUEUE = "user-msg-queue";
 }
