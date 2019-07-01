@@ -22,13 +22,12 @@
         <option value="$PROJECT_DIR$/v13-service/pom.xml" />
         <option value="$PROJECT_DIR$/v13-service/v13-email-service/pom.xml" />
         <option value="$PROJECT_DIR$/v13-web/v13-sso-web/pom.xml" />
-        <option value="$PROJECT_DIR$/v13-web/v13-user-web/pom.xml" />
         <option value="$PROJECT_DIR$/v13-web/index-web/pom.xml" />
-        <option value="$PROJECT_DIR$/v13-web/v13-index-web/pom.xml" />
         <option value="$PROJECT_DIR$/v13-web/v13-email-web/pom.xml" />
         <option value="$PROJECT_DIR$/v13-web/v13-search-web/pom.xml" />
         <option value="$PROJECT_DIR$/v13-web/v13-shopcar-web/pom.xml" />
         <option value="$PROJECT_DIR$/v13-service/v13-shopcart-service/pom.xml" />
+        <option value="$PROJECT_DIR$/v13-api/v13-shopcart-api/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

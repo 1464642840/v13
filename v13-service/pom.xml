@@ -11,8 +11,5 @@
 
     <artifactId>v13-service</artifactId>
     <packaging>pom</packaging>
-    <modules>
-        <module>../v13-api/v13-shopcart-api</module>
-    </modules>
 
 </project>

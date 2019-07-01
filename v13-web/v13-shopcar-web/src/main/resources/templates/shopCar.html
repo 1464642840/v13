@@ -257,9 +257,9 @@
                 </div>
             </div>
             <div class="mid-sl f-l">
-                <a href="JavaScript:;" class="sl-left">-</a>
+                <a href="JavaScript:;" class="sl-left chang-num">-</a>
                 <input type="text" th:value="${product.count}" value="1"/>
-                <a href="JavaScript:;" class="sl-right">+</a>
+                <a href="JavaScript:;" class="sl-right chang-num">+</a>
             </div>
             <p class="mid-dj f-l" th:text="|¥${product.price}|">¥ 66.00</p>
             <p class="mid-je f-l" th:text="|¥${product.price * product.count}|">¥ 66.00</p>
@@ -377,10 +377,11 @@
 </div>
 <script type="text/javascript">
     $(function () {
+        //删除按钮的监听
         $(".delete_button").click(function () {
             var pid = $(this).attr("pid");
             $.ajax({
-                url: "http://localhost:9099/shopCart/delete/"+pid,
+                url: "http://localhost:9099/shopCart/delete/" + pid,
                 success: function (data) {
                     alert(data.data);
                     window.location.reload();
@@ -388,6 +389,18 @@
             })
 
         });
+        //加减按钮的监听
+        $(".chang-num").mouseenter(function () {
+            var num1 = $(this).parent().find("input").val();
+            $(this).mouseleave(function () {
+                var num2 = $(this).parent().find("input").val();
+                $(this).unbind("mouseleave");
+                if (num2 != num1) {
+                    alert(num2 + "=====" + num1);
+                }
+
+            });
+        })
     });
 </script>
 </body>
